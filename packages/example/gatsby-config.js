@@ -1,7 +1,8 @@
 module.exports = {
   plugins: [
+    'gatsby-plugin-theme-ui',
     { 
-      resolve: `@raytion/gatsby-theme-docs`,
+      resolve: `@prettypaper/gatsby-theme-docs`,
       options: {
         title: 'Example',
         version: '1.0.1',

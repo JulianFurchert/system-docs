@@ -3,25 +3,7 @@ module.exports = {
     title: `Gatsby`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-typescript`,
-      options: {
-        "allowSyntheticDefaultImports": true,
-        "declaration": true,
-        "esModuleInterop": true,
-        "forceConsistentCasingInFileNames": true,
-        "jsx": "react",
-        "module": "esnext",
-        "moduleResolution": "node",
-        "noEmit": true,
-        "outDir": "dist",
-        "resolveJsonModule": true,
-        "skipLibCheck": true,
-        "sourceMap": true,
-        "strict": true,
-        "target": "es5"
-      },
-    },
+    'gatsby-plugin-theme-ui',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {
