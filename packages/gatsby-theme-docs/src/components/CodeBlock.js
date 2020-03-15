@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import { jsx } from 'theme-ui'
-import React from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { theme as radixTheme, Box } from '@modulz/radix';

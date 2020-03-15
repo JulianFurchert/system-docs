@@ -1,6 +1,5 @@
 module.exports = {
   plugins: [
-    'gatsby-plugin-theme-ui',
     { 
       resolve: `@prettypaper/gatsby-theme-docs`,
       options: {

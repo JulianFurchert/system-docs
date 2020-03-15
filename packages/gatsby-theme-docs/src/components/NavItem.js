@@ -46,4 +46,4 @@ function NavList({ children, ...props }) {
   );
 }
 
-export default NavItem;
+export { NavList, NavItem };

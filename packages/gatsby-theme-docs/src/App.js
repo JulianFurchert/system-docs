@@ -12,7 +12,7 @@ import {
   Link,
 } from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
-import NavItem from './components/NavItem';
+import { NavItem } from './components/NavItem';
 import './index.css'
 
 function App({ element, props }) {
