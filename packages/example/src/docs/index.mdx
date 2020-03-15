@@ -1,0 +1,40 @@
+---
+title: Z First Page
+menu: Overview
+order: 0
+description: Radix is a design system built with Modulz, for Modulz.
+---
+
+
+### Installing Radix
+
+Radix is currently under heavy development, but can be installed by running either of these commands:
+
+```
+npm install @modulz/radix
+```
+
+<br />
+or
+
+```
+yarn add @modulz/radix
+```
+
+### Radix Provider
+
+Make sure to wrap your app in `RadixProvider` to get the default theme:
+
+```js
+import { RadixProvider } from '@modulz/radix';
+
+const App = () => <RadixProvider>Hey there👋</RadixProvider>;
+```
+
+### Importing components from Radix
+
+All components can be imported directly:
+
+```js
+import { Heading, Text, Link } from '@modulz/radix';
+```
