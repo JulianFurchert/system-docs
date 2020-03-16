@@ -7,3 +7,9 @@
       url: /example/example-1
     - title: Example 2
       url: /example/example-2
+- categorie: Cateogire 2
+  pages:
+    - title: Example Test
+      url: /example/example-1
+    - title: Example 2
+      url: /example/example-2

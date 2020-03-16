@@ -7,6 +7,7 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
+  radii: [0, 4],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -59,6 +60,51 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
+    },
+    navTitle: {
+      fontFamily: 'heading',
+      fontSize: '11px',
+      fontWeight: 'body',
+      letterSpacing: '.06em',
+      textTransform: 'uppercase',
+      color: 'gray700'
+    },
+  },
+  links: {
+    nav: {
+      display: 'block',
+      width: '100%',
+      px: 2,
+      py: 1,
+      color: 'text',
+      textDecoration: 'none',
+      fontSize: 1,
+      borderRadius: 1,
+      fontWeight: 'body',
+      bg: 'transparent',
+      transitionProperty: 'background-color',
+      transitionTimingFunction: 'ease-out',
+      transitionDuration: '.2s',
+      borderRadius: 2,
+      cursor: 'pointer',
+      '&:hover': {
+        bg: 'gray100',
+        color: 'text'
+      },
+      '&.active': {
+        bg: 'gray100',
+        color: 'text'
+      },
+    }
+  },
+  badges: {
+    primary: {
+      color: 'background',
+    },
+    outline: {
+      color: 'primary',
+      bg: 'transparent',
+      boxShadow: 'inset 0 0 0 1px',
     },
   },
   // mdx styles
