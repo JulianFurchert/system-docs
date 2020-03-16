@@ -4,6 +4,7 @@ module.exports = {
   },
   plugins: [
     'gatsby-plugin-theme-ui',
+    'gatsby-theme-ui-layout',
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-styled-components',
     {

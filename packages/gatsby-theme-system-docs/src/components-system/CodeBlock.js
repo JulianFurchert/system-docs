@@ -3,7 +3,6 @@ import { jsx } from 'theme-ui'
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { theme as radixTheme, Box } from '@modulz/radix';
-import WrapLiveCode from '../wrapLiveCode'
 const { colors } = radixTheme;
 
 export const liveEditorStyle = {
@@ -101,35 +100,33 @@ export default ({ children, live, removeFragment, gray }) => {
   if (live) {
     return (
       <Box mt={4}>
-        <WrapLiveCode>
-          <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
-            <LivePreview
-              style={{
-                backgroundColor: gray ? colors.gray200 : 'white',
-                padding: radixTheme.space[4],
-                border: `1px solid ${colors.gray300}`,
-                borderTopLeftRadius: radixTheme.radii[3],
-                borderTopRightRadius: radixTheme.radii[3],
-              }}
-            />
-            <LiveEditor
-              padding={radixTheme.space[3]}
-              style={{
-                borderBottomLeftRadius: radixTheme.radii[3],
-                borderBottomRightRadius: radixTheme.radii[3],
-                border: `1px solid ${colors.gray300}`,
-                borderTop: 'none',
-                fontSize: 13,
-                fontFamily: radixTheme.fonts.mono,
-                fontWeight: 400,
-                lineHeight: 1.5,
-              }}
-              css={{ textarea: { outline: 0 } }}
-            />
+        <LiveProvider code={children.trim()} {...liveProviderProps} theme={theme}>
+          <LivePreview
+            style={{
+              backgroundColor: gray ? colors.gray200 : 'white',
+              padding: radixTheme.space[4],
+              border: `1px solid ${colors.gray300}`,
+              borderTopLeftRadius: radixTheme.radii[3],
+              borderTopRightRadius: radixTheme.radii[3],
+            }}
+          />
+          <LiveEditor
+            padding={radixTheme.space[3]}
+            style={{
+              borderBottomLeftRadius: radixTheme.radii[3],
+              borderBottomRightRadius: radixTheme.radii[3],
+              border: `1px solid ${colors.gray300}`,
+              borderTop: 'none',
+              fontSize: 13,
+              fontFamily: radixTheme.fonts.mono,
+              fontWeight: 400,
+              lineHeight: 1.5,
+            }}
+            css={{ textarea: { outline: 0 } }}
+          />
 
-            <LiveError />
-          </LiveProvider>
-        </WrapLiveCode>
+          <LiveError />
+        </LiveProvider>
       </Box>
     );
   }

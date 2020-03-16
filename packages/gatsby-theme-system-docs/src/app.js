@@ -9,13 +9,12 @@ import {
   Divider,
   GhostButton,
   Text,
-  Link,
 } from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
-import { NavItem } from './components/NavItem';
+import { NavItem } from './components/nav-item';
 
 function App({ element, props }) {
-  const pathname = props.location.pathname;
+  const pathname = 'test';
   const [navOpen, setNavOpen] = useState(false);
   const data = useStaticQuery(graphql`
     fragment mdxContent on MdxConnection {
@@ -66,10 +65,6 @@ function App({ element, props }) {
   const menu = data.allMdx.group.sort(({fieldValue: a}, {fieldValue: b}) =>
     indexOf(a) - indexOf(b)
   )
-
-  console.log(data.config.menu.indexOf('Pattern'))
-  console.log(data.config.menu.indexOf('Overview'))
-  console.log(data.config.menu.indexOf('Components'))
 
   return (
     <>
@@ -159,16 +154,6 @@ function App({ element, props }) {
             ))}
           </List>
 
-          <Divider mb={1} />
-
-          <Box px={5} mb={2} mt={3} minHeight={6}>
-            <Text size={2}>
-              Powered by{' '}
-              <Link href="https://www.raytion.de/" title="Raytion">
-                Raytion
-              </Link>
-            </Text>
-          </Box>
         </Box>
       </Box>
 

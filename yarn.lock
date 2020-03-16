@@ -5824,6 +5824,11 @@ gatsby-telemetry@^1.1.55:
     stack-utils "1.0.2"
     uuid "3.3.3"
 
+gatsby-theme-ui-layout@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/gatsby-theme-ui-layout/-/gatsby-theme-ui-layout-0.3.0.tgz#90f0991bc7c1393ac4109c24e056b0f9b3cbbbc8"
+  integrity sha512-beZfUwZfB4IH0maqVfYSTI2lc37xmC29jKxdqNSfPBv9DwEYV2rU4cBZtdJl9H9V4E9MIz/Gp8pVQomxGBK6YA==
+
 gatsby@^2.18.11, gatsby@^2.18.8:
   version "2.19.43"
   resolved "https://registry.yarnpkg.com/gatsby/-/gatsby-2.19.43.tgz#286d00a6494a86992e6e08b13456fe7501c26952"

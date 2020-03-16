@@ -30,6 +30,7 @@
     "gatsby-plugin-theme-ui": "^0.3.0",
     "gatsby-plugin-typescript": "^2.1.23",
     "gatsby-source-filesystem": "^2.1.42",
+    "gatsby-theme-ui-layout": "^0.3.0",
     "github-slugger": "^1.2.1",
     "i": "^0.3.6",
     "npm": "^6.14.2",
