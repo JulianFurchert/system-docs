@@ -1,7 +1,7 @@
 module.exports = {
   plugins: [
     { 
-      resolve: `@prettypaper/gatsby-theme-docs`,
+      resolve: `gatsby-theme-system-docs`,
       options: {
         title: 'Example',
         version: '1.0.1',

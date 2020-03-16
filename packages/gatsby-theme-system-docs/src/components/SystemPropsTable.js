@@ -10,12 +10,6 @@ export function SystemPropsTable({ props }) {
       </Heading>
       <Box my={4}>
         <Table>
-          {/* <Thead>
-          <Tr>
-            <Th>Name</Th>
-            <Th>Props</Th>
-          </Tr>
-        </Thead> */}
           <Tbody>
             {props.sort().map(prop => (
               <Tr key={prop}>
@@ -24,15 +18,6 @@ export function SystemPropsTable({ props }) {
                     <Code>{prop}</Code>
                   </Text>
                 </Td>
-                {/* <Td style={{ width: '60%' }}>
-                {RadixSystem[prop].propNames.map(p => (
-                  <Box>
-                    <Code key={p} my={1}>
-                      {p}
-                    </Code>
-                  </Box>
-                ))}
-              </Td> */}
               </Tr>
             ))}
           </Tbody>

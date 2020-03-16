@@ -13,7 +13,6 @@ import {
 } from '@modulz/radix';
 import { HamburgerIcon, CrossIcon } from '@modulz/radix-icons';
 import { NavItem } from './components/NavItem';
-import './index.css'
 
 function App({ element, props }) {
   const pathname = props.location.pathname;

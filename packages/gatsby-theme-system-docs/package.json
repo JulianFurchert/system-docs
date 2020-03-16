@@ -1,5 +1,5 @@
 {
-  "name": "@prettypaper/gatsby-theme-docs",
+  "name": "gatsby-theme-system-docs",
   "version": "0.1.0",
   "description": "Docs",
   "scripts": {

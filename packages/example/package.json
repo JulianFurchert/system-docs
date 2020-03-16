@@ -11,7 +11,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "@prettypaper/gatsby-theme-docs": "^0.1.0",
+    "gatsby-theme-system-docs": "^0.1.0",
     "emotion-theming": "^10.0.27",
     "gatsby": "^2.18.8",
     "react": "^16.12.0",

@@ -72,7 +72,7 @@ exports.onPreBootstrap = ({ reporter, actions }) => {
 
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
-  const postTemplate = require.resolve('./src/templates/doc-page.js');
+  const postTemplate = require.resolve('./src/page.js');
 
   const allDocs = await graphql(
     `
