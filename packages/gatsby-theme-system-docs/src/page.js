@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from 'gatsby-theme-ui-layout'
+import Layout from './layout'
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import * as RC from '@modulz/radix';

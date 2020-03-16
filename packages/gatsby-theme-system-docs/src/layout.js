@@ -1,9 +1,19 @@
 import React from 'react'
-import Head from './head'
+import { Helmet } from 'react-helmet'
+import Sidebar from './components/sidebar'
+import Main from './components/main'
 
-export default props => (
+export default ({title, excerpt, ...props}) => (
   <>
-    <Head {...props} />
-    {props.children}
+    <Helmet>
+      {title && <title>{title}</title>}
+      {excerpt && <meta name="description" content={excerpt} />}
+    </Helmet>
+    <div>
+      <Sidebar />
+      <Main>
+        {props.children}
+      </Main>
+    </div>
   </>
 )

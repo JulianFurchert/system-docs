@@ -1,3 +1,9 @@
 # Users can shadow this file to define navigation items.
 # See https://primer.style/doctocat/usage/customization/#side-navigation for more details.
-# []
+
+- categorie: Example Test
+  pages:
+    - title: Example Test
+      url: /example/example-1
+    - title: Example 2
+      url: /example/example-2
