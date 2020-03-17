@@ -6,7 +6,6 @@ import * as RC from '@modulz/radix';
 
 function DocPageTemplate({ 
   data, 
-  location, 
   title,
   description,
   ...props 

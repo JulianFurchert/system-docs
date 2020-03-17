@@ -91,7 +91,7 @@ export default {
         bg: 'gray100',
         color: 'text'
       },
-      '&.active': {
+      '&[data-active]': {
         bg: 'gray100',
         color: 'text'
       },

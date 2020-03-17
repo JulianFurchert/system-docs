@@ -5,7 +5,7 @@ import Header from './components/header'
 import Sidebar from './components/sidebar'
 import Main from './components/main'
 
-export default ({title, excerpt, ...props}) => (
+export default ({title, excerpt, location, ...props}) => (
   <>
     <Helmet>
       {title && <title>{title}</title>}
@@ -13,7 +13,7 @@ export default ({title, excerpt, ...props}) => (
     </Helmet>
     <Header />
     <Flex>
-      <Sidebar />
+      <Sidebar location={location} />
       <Main>
         {props.children}
       </Main>

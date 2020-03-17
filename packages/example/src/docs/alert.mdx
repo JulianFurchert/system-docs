@@ -1,10 +1,10 @@
 ---
-title: Button
+title: Alert
 description: Useful to communicate actions to your users.
 ---
 
 ```js live gray
-<button>New project</button>
+<p>New project</p>
 ```
 
 <PropsTable
@@ -60,7 +60,12 @@ There are 4 colors to choose from.
 There are 2 sizes to choose from.
 
 ```js live
-<button>New project</button>
+<Button size={0}>
+  Default
+</Button>
+<Button size={1} ml={6}>
+  Large
+</Button>
 ```
 
 ### Waiting state
@@ -68,5 +73,5 @@ There are 2 sizes to choose from.
 When the user is waiting for the server to respond.
 
 ```js live
-<button>New project</button>
+<Button isWaiting>Waiting</Button>
 ```

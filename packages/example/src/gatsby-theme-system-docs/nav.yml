@@ -1,15 +1,15 @@
 # Users can shadow this file to define navigation items.
 # See https://primer.style/doctocat/usage/customization/#side-navigation for more details.
 
-- categorie: Example Test
+- categorie: Overview
   pages:
-    - title: Example Test
-      url: /example/example-1
-    - title: Example 2
-      url: /example/example-2
-- categorie: Cateogire 2
+    - title: About
+      url: /
+    - title: Getting Started
+      url: /getting-started
+- categorie: Components
   pages:
-    - title: Example Test
-      url: /example/example-1
-    - title: Example 2
-      url: /example/example-2
+    - title: Button
+      url: /button
+    - title: Alert
+      url: /alert
