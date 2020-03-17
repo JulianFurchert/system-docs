@@ -25,7 +25,7 @@ export default ({ children, location, ...props }) => {
       <Box>
         {navItems.map(navItem => (
           <Box sx={{mt: 4}}>
-            <Heading variant="navTitle" sx={{ my: 1, py: 1, px: 2}}>
+            <Heading variant="overline" sx={{ my: 1, py: 1, px: 2}}>
               {navItem.categorie}
             </Heading>
             {navItem.pages && navItem.pages.map(item => (

@@ -12,7 +12,7 @@ export function PropsTable({ data, title = "Props" }) {
       overflow={['scroll', 'visible']}
       style={{ WebkitOverflowScrolling: 'touch' }}
     >
-      <Heading as="h3" fontWeight={500} size={2} mt={8} mb={4}>
+      <Heading as="h3" variant="headline" mt={12} mb={2}>
         {title}
       </Heading>
       {hasProps ? (

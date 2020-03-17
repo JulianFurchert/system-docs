@@ -14,8 +14,8 @@ function DocPageTemplate({
 
   return (
     <Layout title={title} excerpt={description} {...props}>
-      <Box>
-        <Heading size={4} fontWeight={500} mb={2} lineHeight={4}>
+      <Box mt={2}>
+        <Heading variant="title" mb={2}>
           {data.mdx.frontmatter.title}
         </Heading>
         <Text size={1} mb={7} lineHeight={3} textColor="gray700">

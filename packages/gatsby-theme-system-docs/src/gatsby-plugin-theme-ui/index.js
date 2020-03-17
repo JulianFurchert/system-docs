@@ -10,8 +10,8 @@ export default {
   radii: [0, 4, 8],
   fontWeights: {
     body: 400,
-    heading: 700,
-    bold: 700,
+    heading: 600,
+    bold: 600,
   },
   lineHeights: {
     body: 1.5,
@@ -72,14 +72,34 @@ export default {
       lineHeight: 'heading',
       fontWeight: 'heading',
     },
-    navTitle: {
+    title: {
       fontFamily: 'heading',
-      fontSize: '11px',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      fontSize: '35px',
+    },
+    headline: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      fontSize: '23px',
+    },
+    headlineSmall: {
+      fontFamily: 'heading',
+      lineHeight: 'heading',
+      fontWeight: 'heading',
+      fontSize: '19px',
+    },
+    overline: {
+      fontFamily: 'heading',
+      fontSize: '12px',
       fontWeight: 'body',
       letterSpacing: '.06em',
       textTransform: 'uppercase',
       color: 'gray700'
     },
+    body: {},
+    code: {}
   },
   links: {
     nav: {
@@ -148,29 +168,43 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
+    p: {
+      color: 'gray700',
+      mt: 1,
+    },
     h1: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: '23px',
+      mt: 12,
     },
     h2: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: '23px',
+      mt: 12,
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: '19px',
+      mt: 10,
+      mb: 1
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 2,
+      fontSize: '19px',
+      mt: 10,
+      mb: 1
     },
     h5: {
       variant: 'text.heading',
-      fontSize: 1,
+      fontSize: '19px',
+      mt: 10,
+      mb: 1
     },
     h6: {
       variant: 'text.heading',
-      fontSize: 0,
+      fontSize: '19px',
+      mt: 10,
+      mb: 1
     },
     pre: {
       fontFamily: 'monospace',
@@ -189,14 +223,12 @@ export default {
       borderSpacing: 0,
     },
     th: {
-      textAlign: 'left',
-      color: 'gray700',
-      fontSize: 13,
-      fontWeight: 'normal',
       p: 3,
       pl: 0,
       borderBottom: '1px solid',
       borderColor: 'gray300',
+      variant: 'text.overline',
+      textAlign: 'left',
     },
     td: {
       textAlign: 'left',
