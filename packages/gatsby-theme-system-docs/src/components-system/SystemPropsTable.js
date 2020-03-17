@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Box, Table, Tr, Tbody, Td, Code, Text, Heading } from '@modulz/radix';
+import { jsx, Styled, Box, Text, Heading } from 'theme-ui'
+import Code from './Code'
 
 export function SystemPropsTable({ props }) {
   return (
@@ -9,19 +9,19 @@ export function SystemPropsTable({ props }) {
         System props
       </Heading>
       <Box my={4}>
-        <Table>
-          <Tbody>
+        <Styled.table>
+          <tbody>
             {props.sort().map(prop => (
-              <Tr key={prop}>
-                <Td>
+              <tr key={prop}>
+                <Styled.tr>
                   <Text textColor="gray700">
                     <Code>{prop}</Code>
                   </Text>
-                </Td>
-              </Tr>
+                </Styled.tr>
+              </tr>
             ))}
-          </Tbody>
-        </Table>
+          </tbody>
+        </Styled.table>
       </Box>
     </Box>
   );

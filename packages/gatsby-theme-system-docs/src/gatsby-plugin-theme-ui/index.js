@@ -7,7 +7,7 @@ export default {
     monospace: 'Menlo, monospace',
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 96],
-  radii: [0, 4],
+  radii: [0, 4, 8],
   fontWeights: {
     body: 400,
     heading: 700,
@@ -17,9 +17,15 @@ export default {
     body: 1.5,
     heading: 1.125,
   },
+  useCustomProperties: false,
   colors: {
     primary: '#2680EB',
-    secondary: '#2680EB',
+    highlight: '#E5F0FD',
+    // accents
+    purple: '#5151D3',
+    magenta: '#BC1C74',
+    green: '#0F797D',
+    // grays
     gray50: '#FFFFFF',
     gray75: '#FAFAFA',
     gray100: '#F5F5F5',
@@ -34,26 +40,31 @@ export default {
     // based on gray
     text: '#2C2C2C',
     background: '#FFFFFF',
-  },
-  modes: {
-    dark: {
-      primary: '#2680EB',
-      secondary: '#2680EB',
-      gray50: '#080808',
-      gray75: '#1A1A1A',
-      gray100: '#1E1E1E',
-      gray200: '#2C2C2C',
-      gray300: '#393939',
-      gray400: '#494949',
-      gray500: '#5C5C5C',
-      gray600: '#7C7C7C',
-      gray700: '#A2A2A2',
-      gray800: '#C8C8C8',
-      gray900: '#EFEFEF',
-      // based on gray
-      text: '#EFEFEF',
-      background: '#080808',
-    }
+    modes: {
+      dark: {
+        primary: '#2680EB',
+        highlight: '#1D2835',
+        // accents
+        purple: '#8282F6',
+        magenta: '#EC5AAA',
+        green: '#23B2B8',
+        // grays
+        gray50: '#080808',
+        gray75: '#1A1A1A',
+        gray100: '#1E1E1E',
+        gray200: '#2C2C2C',
+        gray300: '#393939',
+        gray400: '#494949',
+        gray500: '#5C5C5C',
+        gray600: '#7C7C7C',
+        gray700: '#A2A2A2',
+        gray800: '#C8C8C8',
+        gray900: '#EFEFEF',
+        // based on gray
+        text: '#EFEFEF', //gray900
+        background: '#080808', //gray50
+      }
+    },
   },
   text: {
     heading: {
@@ -85,15 +96,14 @@ export default {
       transitionProperty: 'background-color',
       transitionTimingFunction: 'ease-out',
       transitionDuration: '.2s',
-      borderRadius: 2,
       cursor: 'pointer',
       '&:hover': {
         bg: 'gray100',
         color: 'text'
       },
       '&[data-active]': {
-        bg: 'gray100',
-        color: 'text'
+        bg: 'primary',
+        color: 'white'
       },
     }
   },
@@ -105,6 +115,30 @@ export default {
       color: 'primary',
       bg: 'transparent',
       boxShadow: 'inset 0 0 0 1px',
+    },
+  },
+  code: {
+    fade: {
+      color: 'gray700',
+      bg: 'gray100',
+    }
+  },
+  prism: {
+    color: 'gray800',
+    '.comment,.prolog,.doctype,.cdata,.punctuation,.operator,.entity,.url': {
+      color: 'gray700',
+    },
+    '.comment': {
+      fontStyle: 'italic',
+    },
+    '.property,.tag,.boolean,.number,.constant,.symbol,.deleted,.function,.class-name,.regex,.important,.variable': {
+      color: 'primary',
+    },
+    '.atrule,.attr-value,.keyword': {
+      color: 'magenta',
+    },
+    '.selector,.attr-name,.string,.char,.builtin,.inserted': {
+      color: 'green',
     },
   },
   // mdx styles
@@ -151,16 +185,28 @@ export default {
     },
     table: {
       width: '100%',
-      borderCollapse: 'separate',
+      borderCollapse: 'collapse',
       borderSpacing: 0,
     },
     th: {
       textAlign: 'left',
-      borderBottomStyle: 'solid',
+      color: 'gray700',
+      fontSize: 13,
+      fontWeight: 'normal',
+      p: 3,
+      pl: 0,
+      borderBottom: '1px solid',
+      borderColor: 'gray300',
     },
     td: {
       textAlign: 'left',
-      borderBottomStyle: 'solid',
+      color: 'gray700',
+      p: 3,
+      pl: 0,
+      fontSize: 13,
+      textAlign: 'left',
+      borderBottom: '1px solid',
+      borderColor: 'gray300',
     },
   },
 }

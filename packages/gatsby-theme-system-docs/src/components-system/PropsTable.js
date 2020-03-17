@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { jsx } from 'theme-ui'
-import { Box, Table, Thead, Tr, Th, Tbody, Td, Code, Text, Heading } from '@modulz/radix';
+import { jsx, Styled, Box, Text, Heading } from 'theme-ui'
+import Code from './Code'
 
 export function PropsTable({ data, title = "Props" }) {
   const hasProps = Object.keys(data).length > 0;
@@ -17,42 +17,42 @@ export function PropsTable({ data, title = "Props" }) {
       </Heading>
       {hasProps ? (
         <Box minWidth={['540px', '0']}>
-          <Table>
-            <Thead>
-              <Tr>
-                <Th>Prop</Th>
-                <Th>Type</Th>
-                <Th>Default</Th>
-                <Th>Description</Th>
-              </Tr>
-            </Thead>
-            <Tbody>
+          <Styled.table>
+            <thead>
+              <tr>
+                <Styled.th>Prop</Styled.th>
+                <Styled.th>Type</Styled.th>
+                <Styled.th>Default</Styled.th>
+                <Styled.th>Description</Styled.th>
+              </tr>
+            </thead>
+            <tbody>
               {Object.entries(data).map(([key, value]) => {
                 return (
-                  <Tr key={key}>
-                    <Td>
+                  <tr key={key}>
+                    <Styled.td>
                       <Code>{key}</Code>
-                    </Td>
-                    <Td>
+                    </Styled.td>
+                    <Styled.td>
                       <Text textColor="gray700">
                         <Code variant="fade">{value.type}</Code>
                       </Text>
-                    </Td>
-                    <Td>
+                    </Styled.td>
+                    <Styled.td>
                       {value.default && (
                         <Text textColor="gray700">
                           <Code variant="fade">{value.default}</Code>
                         </Text>
                       )}
-                    </Td>
-                    <Td>
+                    </Styled.td>
+                    <Styled.td>
                       <Text textColor="gray700">{value.description}</Text>
-                    </Td>
-                  </Tr>
+                    </Styled.td>
+                  </tr>
                 );
               })}
-            </Tbody>
-          </Table>
+            </tbody>
+          </Styled.table>
         </Box>
       ) : (
         <Text as="p">No props</Text>
