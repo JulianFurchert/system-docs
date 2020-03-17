@@ -6,14 +6,6 @@ module.exports = {
     'gatsby-plugin-theme-ui',
     'gatsby-theme-ui-layout',
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-styled-components',
-    {
-      resolve: 'gatsby-plugin-nprogress',
-      options: {
-        color: 'hsl(208, 98%, 50%)',
-        showSpinner: false,
-      },
-    },
     'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-plugin-mdx',
@@ -30,6 +22,5 @@ module.exports = {
         path: `src/docs`,
       },
     },
-    'gatsby-plugin-netlify',
   ],
 };
