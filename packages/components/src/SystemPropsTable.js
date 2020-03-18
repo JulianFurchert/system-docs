@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, Box, Text, Heading } from 'theme-ui'
-import Code from './Code'
+import { InlineCode as Code} from './InlineCode'
 
 export function SystemPropsTable({ props }) {
   return (

@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx, Styled, Box, Text, Heading } from 'theme-ui'
-import Code from './Code'
+import { InlineCode as Code} from './InlineCode'
 
 export function PropsTable({ data, title = "Props" }) {
   const hasProps = Object.keys(data).length > 0;
