@@ -4,9 +4,6 @@
   "version": "1.9.0",
   "main": "index.js",
   "license": "MIT",
-  "scripts": {
-    "build": "yarn workspace example build"
-  },
   "workspaces": {
     "packages": [
       "packages/*"
