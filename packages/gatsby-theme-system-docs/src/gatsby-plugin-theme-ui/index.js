@@ -76,7 +76,7 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: '35px',
+      fontSize: '45px',
     },
     headline: {
       fontFamily: 'heading',
@@ -96,6 +96,12 @@ export default {
       fontWeight: 'body',
       letterSpacing: '.06em',
       textTransform: 'uppercase',
+      color: 'gray700'
+    },
+    teaser: {
+      fontFamily: 'body',
+      fontSize: '20px',
+      fontWeight: 'body',
       color: 'gray700'
     },
     body: {},
@@ -141,6 +147,12 @@ export default {
     fade: {
       color: 'gray700',
       bg: 'gray100',
+    },
+    outline: {
+      color: 'gray700',
+      bg: 'gray50',
+      border: '1px solid',
+      borderColor: 'gray200',
     }
   },
   prism: {

@@ -8,7 +8,27 @@ description: Useful to communicate actions to your users.
 ```
 
 <PropsTable
-  title="test"  
+  data={{
+    children: {
+      type: 'ReactNode',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+<PropsTable
+  title="Icon"
   data={{
     children: {
       type: 'ReactNode',
@@ -18,16 +38,6 @@ description: Useful to communicate actions to your users.
       type: 'string',
       default: 'gray',
       description: 'The variant to apply',
-    },
-    size: {
-      type: '0 | 1',
-      default: '0',
-      description: 'The size to apply',
-    },
-    isWaiting: {
-      type: 'Boolean',
-      default: 'false',
-      description: 'Whether it is waiting or not',
     },
   }}
 />

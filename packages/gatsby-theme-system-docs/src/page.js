@@ -14,15 +14,15 @@ function DocPageTemplate({
 
   return (
     <Layout title={title} excerpt={description} {...props}>
-      <Box mt={2}>
+      <Box mb={8} mt={8}>
         <Heading variant="title" mb={2}>
           {data.mdx.frontmatter.title}
         </Heading>
-        <Text size={1} mb={7} lineHeight={3} textColor="gray700">
+        <Text variant="teaser" size={1} mt={3} mb="100px">
           {data.mdx.frontmatter.description}
         </Text>
-        {children}
       </Box>
+      {children}
     </Layout>
   );
 }

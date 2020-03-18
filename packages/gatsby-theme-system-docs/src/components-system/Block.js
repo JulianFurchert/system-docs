@@ -62,7 +62,7 @@ const BlockToggleButton = ({ children, ...props }) => {
         py: 0,
         px: 3,
         fontSize: 14,
-        cursor: 'pointer'
+        cursor: 'pointer',
       }} 
       {...props }
     >
