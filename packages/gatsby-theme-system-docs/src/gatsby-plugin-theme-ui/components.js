@@ -1,6 +1,8 @@
-import CodeBlock from '../components-system//CodeBlock';
-import { SystemPropsTable } from '../components-system/SystemPropsTable';
-import { PropsTable } from '../components-system//PropsTable';
+import { 
+  CodeBlock, 
+  SystemPropsTable, 
+  PropsTable 
+} from '../components-system';
 
 export default {
   code: CodeBlock,

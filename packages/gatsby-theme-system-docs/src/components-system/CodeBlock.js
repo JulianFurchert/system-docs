@@ -15,7 +15,7 @@ export const liveEditorStyle = {
 
 const liveTheme = { styles: [] }
 
-export default ({ children, live, removeFragment, gray }) => {
+export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
   const components = useMDXComponents();
 
   const liveProviderProps = {
