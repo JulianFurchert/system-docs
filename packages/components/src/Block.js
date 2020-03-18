@@ -1,20 +1,103 @@
-import React from 'react'
-import Box from '@theme-ui/components'
+/** @jsx jsx */
+import { jsx, Box, Text } from 'theme-ui'
+import React, { useState, createContext, useContext } from 'react'
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@reach/disclosure";
+import { ChevronDown, ChevronRight } from 'react-feather';
 
-export const Block = React.forwardRef((props, ref) => (
-  <Box
+const BlockContext = createContext({ isOpen: false })
+
+const Block = React.forwardRef(({ children, ...props }, ref) => {
+  const [isOpen, setOpen] = useState(false);
+  return(
+    <Box 
+      ref={ref}
+      __themeKey="block.container"
+      sx={{
+        border: `1px solid`,
+        borderColor: 'gray300',
+        borderRadius: 2,
+        overflow: 'hidden'
+      }}
+      {...props }
+      >
+      <Disclosure 
+        open={isOpen} 
+        onChange={() => setOpen(!isOpen)}
+      >
+        <BlockContext.Provider value={{isOpen}}>
+          {children}
+        </BlockContext.Provider>
+      </Disclosure>
+    </Box>
+  )
+})
+
+const BlockHeader = React.forwardRef(({ children, ...props }, ref) => (
+  <Box 
+    __themeKey="block.header"
     ref={ref}
+    sx={{p: 4}} 
     {...props}
-    __themeKey="block"
-    __css={{
-      display: 'flex',
-      alignItems: 'center',
-      px: 3,
-      py: 2,
-      fontWeight: 'bold',
-      color: 'white',
-      bg: 'primary',
-      borderRadius: 4,
-    }}
-  />
+  >
+    {children}
+  </Box>
 ))
+
+const BlockToggleButton = ({ children, ...props }) => {
+  const { isOpen } = useContext(BlockContext);
+
+  return (
+    <DisclosureButton 
+      __themeKey="block.toggleButton"
+      sx={{
+        height: 40,
+        display: 'flex',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
+        width: '100%',
+        border: 'none',
+        bg: 'gray75',
+        borderTop: '1px solid',
+        borderColor: 'gray200',
+        color: 'gray700',
+        outline: 'none',
+        py: 0,
+        px: 3,
+        fontSize: 14,
+        cursor: 'pointer',
+      }} 
+      {...props }
+    >
+      {children ? children : (
+        <React.Fragment>
+          {isOpen ? <ChevronDown size={16} /> : <ChevronRight size={16}></ChevronRight>}
+          <Text
+            sx={{
+              ml: 1,
+            }}
+          >
+            Code Editor
+          </Text>
+        </React.Fragment>
+      )}
+    </DisclosureButton>
+  )
+}
+
+const BlockPanel = ({ children, ...props }) => (
+  <DisclosurePanel
+    __themeKey="block.panel"
+    sx={{
+      p: 2,
+      borderTop: '1px solid',
+      borderColor: 'gray200',
+      bg: 'gray75',
+      outline: 'none',
+    }} 
+    {...props }
+  >
+    {children}
+  </DisclosurePanel>
+)
+
+export { Block, BlockHeader, BlockToggleButton, BlockPanel } 

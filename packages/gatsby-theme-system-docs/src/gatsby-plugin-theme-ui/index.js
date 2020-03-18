@@ -243,7 +243,6 @@ export default {
       textAlign: 'left',
     },
     td: {
-      textAlign: 'left',
       color: 'gray700',
       p: 3,
       pl: 0,

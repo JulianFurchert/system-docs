@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Heading, Text, Badge, Divider } from 'theme-ui'
+import { jsx, Box, Heading, Divider } from 'theme-ui'
 import { Link } from 'gatsby';
 import navItems from '../nav.yml'
 

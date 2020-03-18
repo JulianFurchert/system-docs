@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Flex, Text, Badge, useColorMode } from 'theme-ui'
+import { jsx, Flex, Text, Badge, useColorMode } from 'theme-ui'
 
 export default ({ children, ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
