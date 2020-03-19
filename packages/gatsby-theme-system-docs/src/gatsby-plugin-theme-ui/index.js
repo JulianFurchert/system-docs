@@ -132,7 +132,7 @@ export default {
       py: 1,
       color: 'text',
       textDecoration: 'none',
-      fontSize: 1,
+      fontSize: 13,
       borderRadius: 1,
       fontWeight: 'body',
       bg: 'transparent',
