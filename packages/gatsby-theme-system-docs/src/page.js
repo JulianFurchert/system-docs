@@ -3,6 +3,7 @@ import { jsx, Box, Heading, Text } from 'theme-ui'
 import Layout from './layout'
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
+import { SourceLink } from './components-system';
 
 function DocPageTemplate({ 
   data, 
@@ -11,13 +12,14 @@ function DocPageTemplate({
   ...props 
 }) {
   const children = <MDXRenderer children={data.mdx.body} />;
-
+  console.log(data.mdx.frontmatter)
   return (
     <Layout title={title} excerpt={description} {...props}>
       <Box mb={8} mt={8}>
         <Heading variant="title" mb={2}>
           {data.mdx.frontmatter.title}
         </Heading>
+        {data.mdx.frontmatter.source ? <SourceLink href={data.mdx.frontmatter.source} /> : null} 
         <Text variant="teaser" size={1} mt={3} mb="100px">
           {data.mdx.frontmatter.description}
         </Text>
@@ -35,6 +37,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         description
+        source
+        status
       }
       body
     }

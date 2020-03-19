@@ -180,6 +180,14 @@ export default {
       lineHeight: 'body',
       fontWeight: 'body',
     },
+    a: {
+      color: 'primary',
+      cursor: 'pointer',
+      textDecoration: 'none',
+      '&:hover': {
+        textDecoration: 'underline'
+      }
+    },
     p: {
       color: 'gray700',
       mt: 1,
