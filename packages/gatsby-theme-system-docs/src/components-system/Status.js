@@ -10,7 +10,7 @@ export const Status = ({ variant = 'Stable', ...props }) => (
       display: 'flex',
       alignItems: 'center',
       border: '1px solid',
-      borderColor: 'gray200',
+      borderColor: 'gray300',
       color: 'gray600',
       fontSize: 13,
       lineHeight: '20px',
