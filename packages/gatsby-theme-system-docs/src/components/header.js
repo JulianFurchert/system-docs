@@ -1,5 +1,6 @@
 /** @jsx jsx */
 import { jsx, Flex, Text, Badge, useColorMode } from 'theme-ui'
+import { ColorToggle } from '../components-system'
 
 export default ({ children, ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
@@ -8,6 +9,7 @@ export default ({ children, ...props }) => {
     <Flex
       sx={{
         justifyContent: 'space-between',
+        alignItems: 'center',       
         borderBottom: '2px solid',
         borderColor: 'gray200',
         px: 6,
@@ -27,12 +29,13 @@ export default ({ children, ...props }) => {
           V.0.1
         </Badge>
       </Flex>
-      <button
+      <ColorToggle
+        colorMode={colorMode}
         onClick={e => {
           setColorMode(colorMode === 'default' ? 'dark' : 'default')
         }}>
         Toggle {colorMode === 'default' ? 'Dark' : 'Light'}
-      </button>
+      </ColorToggle>
     </Flex>
   )
 }
