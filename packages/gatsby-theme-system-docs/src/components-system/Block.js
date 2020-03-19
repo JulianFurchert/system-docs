@@ -35,7 +35,7 @@ const Block = ({ children, ...props }) => {
 
 const BlockHeader = ({ children, ...props }) => (
   <Box 
-    sx={{p: 4}} 
+    sx={{p: 4, py: 6}} 
     {...props}
   >
     {children}
@@ -54,15 +54,17 @@ const BlockToggleButton = ({ children, ...props }) => {
         alignItems: 'center',
         width: '100%',
         border: 'none',
-        bg: 'gray75',
-        borderTop: '1px solid',
-        borderColor: 'gray300',
-        color: 'gray700',
+        bg: 'gray100',
+        borderColor: 'gray500',
+        color: 'gray900',
         outline: 'none',
         py: 0,
         px: 3,
         fontSize: 14,
         cursor: 'pointer',
+        '&:hover':{
+          color: 'gray900',
+        }
       }} 
       {...props }
     >
@@ -87,8 +89,8 @@ const BlockPanel = ({ children, ...props }) => (
     sx={{
       p: 2,
       borderTop: '1px solid',
-      borderColor: 'gray200',
-      bg: 'gray75',
+      borderColor: 'gray300',
+      bg: 'gray100',
       outline: 'none',
     }} 
     {...props }

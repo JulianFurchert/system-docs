@@ -65,6 +65,9 @@ const BlockToggleButton = ({ children, ...props }) => {
         px: 3,
         fontSize: 14,
         cursor: 'pointer',
+        '&:hover':{
+          bg: 'gray100',
+        }
       }} 
       {...props }
     >
