@@ -14,7 +14,7 @@ export default ({ children, ...props }) => (
   >
     <Box 
       sx={{
-        maxWidth: 720,
+        maxWidth: 780,
         px: 6,
         margin: "0px auto"
       }}

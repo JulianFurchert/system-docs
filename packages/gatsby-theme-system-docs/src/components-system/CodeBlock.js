@@ -64,7 +64,7 @@ export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
       <Box
         sx={{
           p: 1,
-          bg: 'gray100',
+          bg: 'gray75',
           outline: 'none',
         }}
       >

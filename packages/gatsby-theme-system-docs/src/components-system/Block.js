@@ -54,8 +54,9 @@ const BlockToggleButton = ({ children, ...props }) => {
         alignItems: 'center',
         width: '100%',
         border: 'none',
-        bg: 'gray100',
-        borderColor: 'gray500',
+        bg: 'gray75',
+        borderTop: '1px solid',
+        borderColor: 'gray200',
         color: 'gray900',
         outline: 'none',
         py: 0,
@@ -64,6 +65,7 @@ const BlockToggleButton = ({ children, ...props }) => {
         cursor: 'pointer',
         '&:hover':{
           color: 'gray900',
+          bg: 'gray75',
         }
       }} 
       {...props }
@@ -90,7 +92,7 @@ const BlockPanel = ({ children, ...props }) => (
       p: 2,
       borderTop: '1px solid',
       borderColor: 'gray300',
-      bg: 'gray100',
+      bg: 'gray75',
       outline: 'none',
     }} 
     {...props }
