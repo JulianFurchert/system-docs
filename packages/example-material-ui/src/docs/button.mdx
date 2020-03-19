@@ -1,0 +1,84 @@
+---
+title: Button
+description: Useful to communicate actions to your users. Useful to communicate actions to your users. Useful to communicate actions to your users.
+status: Stable
+source: https://github.com/path/to/code
+---
+
+```js live
+<button>New project</button>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+<PropsTable
+  title="Icon"
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />
+
+## Examples
+
+### Colors
+
+There are 4 colors to choose from.
+
+```js live
+<Button variant="gray">
+  Cancel
+</Button>
+<Button variant="blue" ml={6}>
+  Save
+</Button>
+<Button variant="green" ml={6}>
+  Copy
+</Button>
+<Button variant="red" ml={6}>
+  Delete
+</Button>
+```
+
+### Sizes
+
+There are 2 sizes to choose from.
+
+```js live gray
+<button>New project</button>
+```
+
+### Waiting state
+
+When the user is waiting for the server to respond.
+
+```js live
+<button>New project</button>
+```
