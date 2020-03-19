@@ -23,7 +23,7 @@ export default {
     highlight: '#E5F0FD',
     // accents
     purple: '#5151D3',
-    magenta: '#BC1C74',
+    red: '#BC1C74',
     green: '#0F797D',
     // grays
     gray50: '#FFFFFF',
@@ -46,7 +46,7 @@ export default {
         highlight: '#1D2835',
         // accents
         purple: '#8282F6',
-        magenta: '#EC5AAA',
+        red: '#EC5AAA',
         green: '#23B2B8',
         // grays
         gray50: '#080808',
@@ -106,6 +106,23 @@ export default {
     },
     body: {},
     code: {}
+  },
+  status: {
+    Stable: {
+      color: 'green',
+    },
+    New: {
+      color: 'green',
+    },
+    Experimental: {
+      color: 'yellow',
+    },
+    Review: {
+      color: 'yellow',
+    },
+    Deprecated: {
+      color: 'red',
+    }
   },
   links: {
     nav: {

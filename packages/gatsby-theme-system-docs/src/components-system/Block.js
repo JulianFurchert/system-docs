@@ -56,7 +56,7 @@ const BlockToggleButton = ({ children, ...props }) => {
         border: 'none',
         bg: 'gray75',
         borderTop: '1px solid',
-        borderColor: 'gray200',
+        borderColor: 'gray300',
         color: 'gray700',
         outline: 'none',
         py: 0,
