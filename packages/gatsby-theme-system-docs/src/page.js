@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Box, Heading, Text } from 'theme-ui'
+import { jsx, Box, Heading, Text, Flex } from 'theme-ui'
 import Layout from './layout'
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
@@ -15,14 +15,16 @@ function DocPageTemplate({
   console.log(data.mdx.frontmatter)
   return (
     <Layout title={title} excerpt={description} {...props}>
-      <Box mb={8} mt={8}>
+      <Box mb={8} mt={8} mb={'100px'}>
         <Heading variant="title" mb={2}>
           {data.mdx.frontmatter.title}
         </Heading>
-        {data.mdx.frontmatter.source ? <SourceLink href={data.mdx.frontmatter.source} /> : null} 
-        <Text variant="teaser" size={1} mt={3} mb="100px">
+        <Text variant="teaser" size={1} my={3}>
           {data.mdx.frontmatter.description}
         </Text>
+        <Flex sx={{textAlign: 'center'}}>
+          {data.mdx.frontmatter.source ? <SourceLink href={data.mdx.frontmatter.source} /> : null} 
+        </Flex>
       </Box>
       {children}
     </Layout>

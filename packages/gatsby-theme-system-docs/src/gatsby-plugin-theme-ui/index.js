@@ -42,7 +42,7 @@ export default {
     background: '#FFFFFF',
     modes: {
       dark: {
-        primary: '#2680EB',
+        primary: '#4B9CF5',
         highlight: '#1D2835',
         // accents
         purple: '#8282F6',
