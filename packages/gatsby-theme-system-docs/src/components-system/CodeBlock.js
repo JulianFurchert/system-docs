@@ -3,6 +3,7 @@ import { jsx, Box } from 'theme-ui'
 import { useMDXComponents, mdx } from '@mdx-js/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { Block, BlockHeader, BlockToggleButton, BlockPanel } from './Block'
+import Wrapper from '../live-code-wrapper'
 
 export const liveEditorStyle = {
   fontSize: 13,
@@ -36,7 +37,9 @@ export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
               backgroundColor: gray ? 'gray75' : 'background',
             }}
           >
-            <LivePreview />
+            <Wrapper>
+              <LivePreview />
+            </Wrapper>
           </BlockHeader>
           <BlockToggleButton />
           <BlockPanel>

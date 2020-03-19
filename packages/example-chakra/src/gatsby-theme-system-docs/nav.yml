@@ -5,11 +5,11 @@
   pages:
     - title: About
       url: /
-    - title: Getting Started
-      url: /getting-started
 - categorie: Components
   pages:
     - title: Button
       url: /button
-    - title: Alert
-      url: /alert
+    - title: Badge
+      url: /badge
+    - title: Popover
+      url: /popover

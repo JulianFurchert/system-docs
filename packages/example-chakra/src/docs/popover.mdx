@@ -1,0 +1,138 @@
+---
+title: Popover
+description: Badges are used to highlight an item's status for quick recognition.
+status: Stable
+source: https://github.com/path/to/code
+---
+
+```js live
+<Popover>
+  <PopoverTrigger>
+    <Button>Trigger</Button>
+  </PopoverTrigger>
+  <PopoverContent zIndex={4}>
+    <PopoverArrow />
+    <PopoverCloseButton />
+    <PopoverHeader>Confirmation!</PopoverHeader>
+    <PopoverBody>Are you sure you want to have that milkshake?</PopoverBody>
+  </PopoverContent>
+</Popover>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+<PropsTable
+  title="Icon"
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />
+
+## Examples
+
+## Rendering the Popover in a Portal
+
+By default, the Popover doesn't render in a Portal. To make them display in a
+portal, pass the `usePortal` prop.
+
+> You might need to **Inspect Element** to see this in action. Notice the
+> `PopoverContent` is rendered as a child of `<body>`
+
+```jsx live
+<Popover usePortal>
+  <PopoverTrigger>
+    <Button>Trigger</Button>
+  </PopoverTrigger>
+  <PopoverContent zIndex={4}>
+    <PopoverArrow />
+    <PopoverHeader>Header</PopoverHeader>
+    <PopoverCloseButton />
+    <PopoverBody>
+      <Button variantColor="blue">Button</Button>
+    </PopoverBody>
+    <PopoverFooter>This is the footer</PopoverFooter>
+  </PopoverContent>
+</Popover>
+```
+
+## Focus an element when Popover opens
+
+By default, focus is to sent to the `PopoverContent` when it opens, you might
+want to send focus to a specific element when it opens. Pass the
+`initialFocusRef` prop to do so.
+
+```jsx live
+function WalkthroughPopover() {
+  const initialFocusRef = React.useRef();
+  return (
+    <Popover
+      initialFocusRef={initialFocusRef}
+      placement="bottom"
+      closeOnBlur={false}
+    >
+      <PopoverTrigger>
+        <Button>Trigger</Button>
+      </PopoverTrigger>
+      <PopoverContent
+        zIndex={4}
+        color="white"
+        bg="blue.800"
+        borderColor="blue.800"
+      >
+        <PopoverHeader pt={4} fontWeight="bold" border="0">
+          Manage Your Channels
+        </PopoverHeader>
+        <PopoverArrow />
+        <PopoverCloseButton />
+        <PopoverBody>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore.
+        </PopoverBody>
+        <PopoverFooter
+          border="0"
+          d="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          pb={4}
+        >
+          <Box fontSize="sm">Step 2 of 4</Box>
+          <ButtonGroup size="sm">
+            <Button variantColor="green">Setup Email</Button>
+            <Button variantColor="blue" ref={initialFocusRef}>
+              Next
+            </Button>
+          </ButtonGroup>
+        </PopoverFooter>
+      </PopoverContent>
+    </Popover>
+  );
+}
+```

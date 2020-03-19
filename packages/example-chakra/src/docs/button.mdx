@@ -1,0 +1,93 @@
+---
+title: Button
+description: Button component is used to trigger an action or event, such as submitting a form, opening a [Dialog](/modal), canceling an action, or performing a delete operation.
+status: Stable
+source: https://github.com/path/to/code
+---
+
+```js live
+<Button variantColor="green">Button</Button>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+<PropsTable
+  title="Icon"
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />
+
+## Examples
+
+### Button Sizes
+
+Use the `size` prop to change the size of the button. You can set the value to
+`xs`, `sm`, `md`, or `lg`.
+
+```jsx live
+<ButtonGroup spacing={4}>
+  <Button variantColor="teal" size="xs">
+    Button
+  </Button>
+  <Button variantColor="teal" size="sm">
+    Button
+  </Button>
+  <Button variantColor="teal" size="md">
+    Button
+  </Button>
+  <Button variantColor="teal" size="lg">
+    Button
+  </Button>
+</ButtonGroup>
+```
+
+### Button Variant
+
+Use the `variant` prop to change the visual style of the Button. You can set the
+value to `solid`, `ghost`, `outline`, or `link`.
+
+```jsx live
+<ButtonGroup spacing={4}>
+  <Button variantColor="teal" variant="solid">
+    Button
+  </Button>
+  <Button variantColor="teal" variant="outline">
+    Button
+  </Button>
+  <Button variantColor="teal" variant="ghost">
+    Button
+  </Button>
+  <Button variantColor="teal" variant="link">
+    Button
+  </Button>
+</ButtonGroup>
+```

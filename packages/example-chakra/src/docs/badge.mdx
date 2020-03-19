@@ -1,0 +1,83 @@
+---
+title: Badge
+description: Badges are used to highlight an item's status for quick recognition.
+status: Stable
+source: https://github.com/path/to/code
+---
+
+```js live
+<Badge>Default</Badge>
+```
+
+<PropsTable
+  data={{
+    children: {
+      type: 'ReactNode',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+    },
+    size: {
+      type: '0 | 1',
+      default: '0',
+    },
+    isWaiting: {
+      type: 'Boolean',
+      default: 'false',
+    },
+  }}
+/>
+
+<PropsTable
+  title="Icon"
+  data={{
+    children: {
+      type: 'ReactNode',
+      description: 'The content to render',
+    },
+    variant: {
+      type: 'string',
+      default: 'gray',
+      description: 'The variant to apply',
+    },
+  }}
+/>
+
+<SystemProps props={['margin']} />
+
+## Examples
+
+### Badge Color
+
+Pass the `variantColor` prop to customize the color of the Badge. `variantColor`
+can be any **color key** that exists in the `theme.colors`.
+[Learn more about theming](/theme).
+
+```jsx live
+<Stack isInline>
+  <Badge>Default</Badge>
+  <Badge variantColor="green">Success</Badge>
+  <Badge variantColor="red">Removed</Badge>
+  <Badge variantColor="purple">New</Badge>
+</Stack>
+```
+
+### Badge Variants
+
+Pass the variant prop and set to either `subtle`, `solid`, or `outline` to get a
+different style.
+
+```jsx live
+<Stack isInline>
+  <Badge variant="outline" variantColor="green">
+    Default
+  </Badge>
+  <Badge variant="solid" variantColor="green">
+    Success
+  </Badge>
+  <Badge variant="subtle" variantColor="green">
+    Removed
+  </Badge>
+</Stack>
+```

@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "example-chakra",
   "version": "1.0.0",
   "main": "index.js",
   "author": "julianfurchert",
@@ -9,6 +9,10 @@
     "build": "gatsby build"
   },
   "dependencies": {
+    "@chakra-ui/core": "^0.6.1",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "emotion-theming": "^10.0.27",
     "gatsby": "^2.18.8",
     "gatsby-theme-system-docs": "^0.1.0",
     "react": "^16.12.0",
