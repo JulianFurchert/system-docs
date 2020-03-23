@@ -102,7 +102,7 @@ export default {
       fontFamily: 'body',
       fontSize: '20px',
       fontWeight: 'body',
-      color: 'gray700'
+      color: 'gray800'
     },
     body: {},
     code: {}
@@ -206,46 +206,56 @@ export default {
       }
     },
     p: {
-      color: 'gray700',
+      color: 'gray800',
       mt: 1,
+    },
+    li: {
+      color: 'gray800',
     },
     h1: {
       variant: 'text.heading',
       fontSize: '23px',
+      color: 'gray900',
       mt: 12,
     },
     h2: {
       variant: 'text.heading',
       fontSize: '23px',
+      color: 'gray900',
       mt: 12,
     },
     h3: {
       variant: 'text.heading',
       fontSize: '19px',
+      color: 'gray900',
       mt: 10,
       mb: 1
     },
     h4: {
       variant: 'text.heading',
       fontSize: '19px',
+      color: 'gray900',
       mt: 10,
       mb: 1
     },
     h5: {
       variant: 'text.heading',
       fontSize: '19px',
+      color: 'gray900',
       mt: 10,
       mb: 1
     },
     h6: {
       variant: 'text.heading',
       fontSize: '19px',
+      color: 'gray900',
       mt: 10,
       mb: 1
     },
     pre: {
       fontFamily: 'monospace',
       overflowX: 'auto',
+      my: 4,
       code: {
         color: 'inherit',
       },
@@ -268,13 +278,13 @@ export default {
       textAlign: 'left',
     },
     td: {
-      color: 'gray700',
       p: 3,
       pl: 0,
       fontSize: 13,
       textAlign: 'left',
       borderBottom: '1px solid',
       borderColor: 'gray300',
+      color: 'gray900',
     },
   },
 }

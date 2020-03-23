@@ -15,14 +15,14 @@ function DocPageTemplate({
   console.log(data.mdx.frontmatter)
   return (
     <Layout title={title} excerpt={description} {...props}>
-      <Box mb={8} mt={8} mb={'100px'}>
+      <Box mb={8} mt={8} mb={'85px'}>
         <Flex sx={{justifyContent: 'space-between', alignItems: 'center', mb: 8}}>
           <Heading variant="title">
             {data.mdx.frontmatter.title}
           </Heading>
           {data.mdx.frontmatter.status ? <Status mr={2} variant={data.mdx.frontmatter.status} /> : null} 
         </Flex>
-        <Text variant="teaser" size={1} my={2}>
+        <Text variant="teaser" color="gray800" size={1} my={2}>
           {data.mdx.frontmatter.description}
         </Text>
         <Flex sx={{textAlign: 'center'}}>

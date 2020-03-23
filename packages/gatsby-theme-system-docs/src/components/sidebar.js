@@ -23,7 +23,7 @@ export default ({ children, location, ...props }) => {
       {...props}
     >
       <Box>
-        {navItems.map(navItem => (
+        {navItems && navItems.map(navItem => (
           <Box sx={{mt: 4}}>
             <Heading variant="overline" sx={{ my: 1, py: 1, px: 2}}>
               {navItem.categorie}

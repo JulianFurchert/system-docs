@@ -2,10 +2,11 @@
 title: Alert
 description: Useful to communicate actions to your users.
 status: Deprecated
+source: 'test'
 ---
 
 ```js live
-<p>New project</p>
+<button>New project</button>
 ```
 
 <PropsTable
@@ -42,37 +43,22 @@ status: Deprecated
 There are 4 colors to choose from.
 
 ```js live
-<Button variant="gray">
-  Cancel
-</Button>
-<Button variant="blue" ml={6}>
-  Save
-</Button>
-<Button variant="green" ml={6}>
-  Copy
-</Button>
-<Button variant="red" ml={6}>
-  Delete
-</Button>
+<button>Colors a</button>
+<button>Colors b</button>
+<button>Colors c</button>
+<button>Colors d</button>
 ```
 
 ### Sizes
 
-There are 2 sizes to choose from.
-
 ```js live
-<Button size={0}>
-  Default
-</Button>
-<Button size={1} ml={6}>
-  Large
-</Button>
+<button>Sizes</button>
 ```
 
 ### Waiting state
 
-When the user is waiting for the server to respond.
+If true, when the user clicks inside the text box the current value will be selected. Use this if the user is likely to delete all the text anyway (like the URL bar in browsers)
 
 ```js live
-<Button isWaiting>Waiting</Button>
+<button>Waiting</button>
 ```
