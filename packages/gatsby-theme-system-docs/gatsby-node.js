@@ -4,69 +4,131 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
-const path = require('path');
-const crypto = require("crypto");
 const fs = require("fs")
 const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createContentDigest } = require(`gatsby-core-utils`)
 
-exports.createSchemaCustomization = ({ actions }) => {
-  const { createTypes } = actions
-  createTypes(`
-    type Link implements Node {
-      name: String,
-      url: String
-    }
-    type DocsConfig implements Node {
-      title: String!,
-      version: String!,
-      redirect: String!,
-      links: [Link]!
-      menu: [String]!
-    }`
-  )
-}
-
-exports.sourceNodes = ({ actions: { createNode } }, options) => {
-  const title = options.title || 'Raytion Docs'
-  const version = options.version || '1.0.0'
-  const links = options.links || []
-  const menu = options.menu || []
-  const redirect = options.menu || '/docs'
-
-  // create garden data from plugin config
-  const notesConfig = {
-    title,
-    version,
-    links,
-    menu,
-    redirect
-  };
-  
-  createNode({
-    ...notesConfig,
-    id: `gatsby-theme-raytion-docs`,
-    parent: null,
-    children: [],
-    internal: {
-      type: `DocsConfig`,
-      contentDigest: crypto
-        .createHash(`md5`)
-        .update(JSON.stringify(notesConfig))
-        .digest(`hex`),
-      content: JSON.stringify(notesConfig),
-      description: `Notes Config`
-    }
-  });
-};
 
 // Make sure the data directory exists
 exports.onPreBootstrap = ({ reporter, actions }) => {
-  const { createNode } = actions
   const contentPath = "src/docs"
 
   if (!fs.existsSync(contentPath)) {
     reporter.info(`creating the ${contentPath} directory`)
     fs.mkdirSync(contentPath)
+  }
+}
+
+
+const mdxResolverPassthrough = fieldName => async (
+  source,
+  args,
+  context,
+  info
+) => {
+  const type = info.schema.getType(`Mdx`)
+  const mdxNode = context.nodeModel.getNodeById({
+    id: source.parent,
+  })
+  const resolver = type.getFields()[fieldName].resolve
+  const result = await resolver(mdxNode, args, context, {
+    fieldName,
+  })
+  return result
+}
+
+exports.createSchemaCustomization = ({ actions, schema }) => {
+  const { createTypes } = actions
+  
+  createTypes(`
+    interface DocPage @nodeInterface {
+      id: ID!
+      body: String!
+      excerpt: String!
+      slug: String!
+      title: String!
+      description: String
+      status: String
+      source: String
+    }`
+  )
+
+  createTypes(
+    schema.buildObjectType({
+      name: `MdxDocPage`,
+      fields: {
+        id: { type: `ID!` },
+        title: {
+          type: `String!`,
+        },
+        slug: {
+          type: `String!`,
+        },
+        description: {
+          type: `String`,
+        },
+        status: {
+          type: `String`,
+        },
+        source: {
+          type: `String`,
+        },
+        excerpt: {
+          type: `String!`,
+          args: {
+            pruneLength: {
+              type: `Int`,
+              defaultValue: 140,
+            },
+          },
+          resolve: mdxResolverPassthrough(`excerpt`),
+        },
+        body: {
+          type: `String!`,
+          resolve: mdxResolverPassthrough(`body`),
+        },
+      },
+      interfaces: [`Node`, `DocPage`],
+    })
+  )
+}
+
+// Create fields for post slugs and source
+// This will change with schema customization with work
+exports.onCreateNode = async ({ node, actions, getNode, createNodeId } ) => {
+  const { createNode, createParentChildLink } = actions;
+
+  if (node.internal.type === `Mdx`) {
+    const slug = createFilePath({ node, getNode });
+    
+    const fieldData = {
+      title: node.frontmatter.title || '',
+      description: node.frontmatter.description || null,
+      status: node.frontmatter.status || null,
+      source: node.frontmatter.source || null,
+      slug,
+    }
+
+    const mdxDocPageId = createNodeId(`${node.id} >>> MdxDocPage`)
+
+    await createNode({
+      ...fieldData,
+      // Required fields.
+      id: mdxDocPageId,
+      parent: node.id,
+      children: [],
+      internal: {
+        type: `MdxDocPage`,
+        contentDigest: createContentDigest(fieldData),
+        content: JSON.stringify(fieldData),
+        description: `Mdx implementation of the DocPage interface`,
+      },
+    })
+
+    createParentChildLink({ 
+      parent: node, 
+      child: getNode(mdxBlogPostId) 
+    })
   }
 }
 
@@ -77,12 +139,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const allDocs = await graphql(
     `
       {
-        allMdx(limit: 1000) {
+        allMdxDocPage(limit: 1000) {
           edges {
             node {
-              fields {
-                slug
-              }
+              slug
             }
           }
         }
@@ -96,8 +156,8 @@ exports.createPages = async ({ graphql, actions }) => {
   }
 
   // Dynamically create a page for each markdown file with layout: post
-  allDocs.data.allMdx.edges.forEach((post, index) => {
-    const { slug } = post.node.fields;
+  allDocs.data.allMdxDocPage.edges.forEach(post => {
+    const { slug } = post.node;
 
     createPage({
       path: slug,
@@ -107,18 +167,4 @@ exports.createPages = async ({ graphql, actions }) => {
       },
     });
   });
-};
-
-exports.onCreateNode = ({ node, getNode, actions }, options) => {
-  const { createNodeField } = actions;
-
-  if (node.internal.type === `Mdx`) {
-    const slug = createFilePath({ node, getNode });
-
-    createNodeField({
-      node,
-      name: 'slug',
-      value: slug,
-    });
-  }
 };

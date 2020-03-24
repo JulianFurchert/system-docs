@@ -1,6 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby`,
+    title: `Title Placeholder`,
+    version: `0.0.0`,
   },
   plugins: [
     'gatsby-plugin-theme-ui',
@@ -11,7 +12,6 @@ module.exports = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         extensions: ['.md', '.mdx'],
-
         remarkPlugins: [require('remark-slug'), require('remark-autolink-headings')],
       },
     },

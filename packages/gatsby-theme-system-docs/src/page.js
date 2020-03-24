@@ -11,22 +11,23 @@ function DocPageTemplate({
   description,
   ...props 
 }) {
-  const children = <MDXRenderer children={data.mdx.body} />;
-  console.log(data.mdx.frontmatter)
+
+  console.log(data)
+  const children = <MDXRenderer children={data.mdxDocPage.body} />;
   return (
     <Layout title={title} excerpt={description} {...props}>
       <Box mb={8} mt={8} mb={'85px'}>
         <Flex sx={{justifyContent: 'space-between', alignItems: 'center', mb: 8}}>
           <Heading variant="title">
-            {data.mdx.frontmatter.title}
+            {data.mdxDocPage.title}
           </Heading>
-          {data.mdx.frontmatter.status ? <Status mr={2} variant={data.mdx.frontmatter.status} /> : null} 
+          {data.mdxDocPage.status ? <Status mr={2} variant={data.mdxDocPage.status} /> : null} 
         </Flex>
         <Text variant="teaser" color="gray800" size={1} my={2}>
-          {data.mdx.frontmatter.description}
+          {data.mdxDocPage.description}
         </Text>
         <Flex sx={{textAlign: 'center'}}>
-          {data.mdx.frontmatter.source ? <SourceLink mr={2} href={data.mdx.frontmatter.source} /> : null} 
+          {data.mdxDocPage.source ? <SourceLink mr={2} href={data.mdxDocPage.source} /> : null} 
         </Flex>
       </Box>
       {children}
@@ -38,13 +39,12 @@ export default DocPageTemplate;
 
 export const pageQuery = graphql`
   query($slug: String!) {
-    mdx(fields: { slug: { eq: $slug } }) {
-      frontmatter {
-        title
-        description
-        source
-        status
-      }
+    mdxDocPage( slug: { eq: $slug } ) {
+      slug
+      title
+      source
+      status
+      description
       body
     }
   }

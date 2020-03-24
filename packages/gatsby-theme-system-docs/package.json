@@ -18,6 +18,7 @@
     "@mdx-js/react": "^1.5.1",
     "@reach/disclosure": "^0.9.0",
     "@theme-ui/components": "^0.3.1",
+    "gatsby-core-utils": "^1.1.1",
     "gatsby-plugin-catch-links": "^2.1.21",
     "gatsby-plugin-mdx": "^1.0.62",
     "gatsby-plugin-react-helmet": "^3.1.18",

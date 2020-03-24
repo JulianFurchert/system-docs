@@ -1,10 +1,21 @@
 /** @jsx jsx */
 import { jsx, Flex, Text, Badge, useColorMode } from 'theme-ui'
+import { useStaticQuery, graphql } from "gatsby"
 import { ColorToggle } from '../components-system'
 
 export default ({ children, ...props }) => {
   const [colorMode, setColorMode] = useColorMode()
-  console.log(colorMode)
+  const data = useStaticQuery(graphql`
+    query HeaderQuery {
+      site {
+        siteMetadata {
+          title,
+          version
+        }
+      }
+    }
+  `)
+
   return (
     <Flex
       sx={{
@@ -23,10 +34,10 @@ export default ({ children, ...props }) => {
         }} 
       >
         <Text sx={{ mr: 4 }}>
-          title
+          {data.site.siteMetadata.title}
         </Text>
         <Badge variant="outline">
-          V.0.1
+          {data.site.siteMetadata.version}
         </Badge>
       </Flex>
       <ColorToggle
