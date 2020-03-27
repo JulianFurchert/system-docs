@@ -127,7 +127,7 @@ exports.onCreateNode = async ({ node, actions, getNode, createNodeId } ) => {
 
     createParentChildLink({ 
       parent: node, 
-      child: getNode(mdxBlogPostId) 
+      child: getNode(mdxDocPageId) 
     })
   }
 }
