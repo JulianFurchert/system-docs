@@ -2,23 +2,21 @@
 import { jsx, Styled, Box, Text, Heading } from 'theme-ui'
 import Code from './Code'
 
-export function PropsTable({ data, title }) {
+export function PropsTable({ data, title = "Props" }) {
   const hasProps = Object.keys(data).length > 0;
   const hasDescription = Object.entries(data).find(([, value]) => value.description) ? true : false
   console.log(Object.entries(data).find(([, value]) => value.description))
 
   return (
     <Box
-      my={5}
+      mt={8}
+      mb={7}
       overflow={['scroll', 'visible']}
       style={{ WebkitOverflowScrolling: 'touch' }}
     >
-      {title && (
-      <Heading as="h3" variant="headlineSmall" fontSize="" mb={2}>
+      <Heading as="h3" variant="headline" mt={12} mb={2}>
         {title}
       </Heading>
-      )}
-
       {hasProps ? (
         <Box minWidth={['540px', '0']}>
           <Styled.table>

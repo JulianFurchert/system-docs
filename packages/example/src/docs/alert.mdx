@@ -7,8 +7,11 @@ description: Useful to communicate actions to your users.
 <button>New project</button>
 ```
 
+## Props
+
+### AlertText Props
+
 <PropsTable
-  title="test"  
   data={{
     children: {
       type: 'ReactNode',
@@ -24,36 +27,33 @@ description: Useful to communicate actions to your users.
       default: '0',
       description: 'The size to apply',
     },
-    isWaiting: {
-      type: 'Boolean',
-      default: 'false',
-      description: 'Whether it is waiting or not',
-    },
   }}
 />
 
+### AlertText Props
+
 <PropsTable
-  title="test"  
   data={{
     children: {
       type: 'ReactNode',
+      description: 'The content to render',
     },
     variant: {
       type: 'string',
       default: 'gray',
+      description: 'The variant to apply',
     },
     size: {
       type: '0 | 1',
       default: '0',
-    },
-    isWaiting: {
-      type: 'Boolean',
-      default: 'false',
+      description: 'The size to apply',
     },
   }}
 />
 
-<SystemProps props={['margin']} />
+## Style props
+Avatar components get `space` style props. Read our Style Props doc page for a full list of available props.
+
 
 ## Examples
 

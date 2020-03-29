@@ -1,6 +1,6 @@
 export default {
   breakpoints: ['40em', '52em', '64em'],
-  space: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60],
+  space: [0, 5, 10, 15, 20, 25, 30, 35, 40, 45, 50, 55, 60, 65, 70],
   fonts: {
     body: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
     heading: 'system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif',
@@ -10,8 +10,8 @@ export default {
   radii: [0, 4, 8],
   fontWeights: {
     body: 400,
-    heading: 600,
-    bold: 600,
+    heading: 500,
+    bold: 500,
   },
   lineHeights: {
     body: 1.5,
@@ -82,13 +82,13 @@ export default {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: '23px',
+      fontSize: '24px',
     },
     headlineSmall: {
       fontFamily: 'heading',
       lineHeight: 'heading',
       fontWeight: 'heading',
-      fontSize: '19px',
+      fontSize: '18px',
     },
     overline: {
       fontFamily: 'heading',
@@ -161,6 +161,10 @@ export default {
     },
   },
   code: {
+    default: {
+      color: 'primary',
+      bg: 'highlight',
+    },
     fade: {
       color: 'gray700',
       bg: 'gray100',
@@ -207,49 +211,45 @@ export default {
     },
     p: {
       color: 'gray800',
+      fontSize: 15,
       mt: 1,
     },
     li: {
       color: 'gray800',
     },
     h1: {
-      variant: 'text.heading',
+      variant: 'text.headline',
       fontSize: '23px',
       color: 'gray900',
-      mt: 12,
+      mt: 14,
     },
     h2: {
-      variant: 'text.heading',
-      fontSize: '23px',
+      variant: 'text.headline',
       color: 'gray900',
-      mt: 12,
+      mt: 14,
     },
     h3: {
-      variant: 'text.heading',
-      fontSize: '19px',
+      variant: 'text.headlineSmall',
       color: 'gray900',
-      mt: 10,
+      mt: 8,
       mb: 1
     },
     h4: {
-      variant: 'text.heading',
-      fontSize: '19px',
+      variant: 'text.headlineSmall',
       color: 'gray900',
-      mt: 10,
+      mt: 8,
       mb: 1
     },
     h5: {
-      variant: 'text.heading',
-      fontSize: '19px',
+      variant: 'text.headlineSmall',
       color: 'gray900',
-      mt: 10,
+      mt: 8,
       mb: 1
     },
     h6: {
-      variant: 'text.heading',
-      fontSize: '19px',
+      variant: 'text.headlineSmall',
       color: 'gray900',
-      mt: 10,
+      mt: 8,
       mb: 1
     },
     pre: {
@@ -258,7 +258,18 @@ export default {
       my: 4,
       code: {
         color: 'inherit',
+        fontFamily: 'monospace',
       },
+    },
+    inlineCode: {
+      fontFamily: 'monospace',
+      fontSize: 13,
+      lineHeight: '20px',
+      px: 1,
+      py: '2px',
+      borderRadius: 1,
+      color: 'primary',
+      bg: 'highlight',
     },
     code: {
       fontFamily: 'monospace',
@@ -270,7 +281,7 @@ export default {
       borderSpacing: 0,
     },
     th: {
-      p: 3,
+      p: 2,
       pl: 0,
       borderBottom: '1px solid',
       borderColor: 'gray300',

@@ -11,3 +11,5 @@
   pages:
     - title: Alert
       url: /alert
+    - title: Bpx
+      url: /box
