@@ -35,7 +35,12 @@ const Block = ({ children, ...props }) => {
 
 const BlockHeader = ({ children, ...props }) => (
   <Box 
-    sx={{p: 4, py: 6}} 
+    sx={{
+      p: 4, 
+      py: 6,
+      whiteSpace: 'normal',
+      fontFamily: 'sans-serif'
+    }} 
     {...props}
   >
     {children}

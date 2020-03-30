@@ -4,6 +4,7 @@ import { useMDXComponents, mdx } from '@mdx-js/react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { Block, BlockHeader, BlockToggleButton, BlockPanel } from './Block'
 import Wrapper from '../live-code-wrapper'
+import liveScope from '../live-code-scope'
 
 export const liveEditorStyle = {
   fontSize: 13,
@@ -18,11 +19,12 @@ const liveTheme = { styles: [] }
 
 export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
   const components = useMDXComponents();
-
   const liveProviderProps = {
     transformCode: code => (removeFragment ? code : `<>${code}</>`),
-    scope: { mdx, ...components },
+    scope: { mdx, ...components, ...liveScope },
   };
+
+
 
   if (live) {
     return (

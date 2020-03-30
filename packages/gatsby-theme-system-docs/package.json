@@ -1,6 +1,6 @@
 {
   "name": "gatsby-theme-system-docs",
-  "version": "0.1.7",
+  "version": "0.2.0",
   "description": "Docs",
   "scripts": {
     "build": "gatsby build",

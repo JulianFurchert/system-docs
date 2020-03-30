@@ -1,13 +1,6 @@
-import { 
-  CodeBlock, 
-  SystemPropsTable, 
-  PropsTable 
-} from '../components-system';
-
-import customComponents from '../live-code-scope'
+import { CodeBlock, SystemPropsTable, PropsTable } from '../components-system';
 
 export default {
-  ...customComponents,
   code: CodeBlock,
   // components
   SystemProps: SystemPropsTable,
