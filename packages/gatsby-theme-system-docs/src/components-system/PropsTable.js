@@ -4,8 +4,8 @@ import Code from './Code'
 
 export function PropsTable({ data, title }) {
   const hasProps = Object.keys(data).length > 0;
+  const hasDefault = Object.entries(data).find(([, value]) => value.default) ? true : false
   const hasDescription = Object.entries(data).find(([, value]) => value.description) ? true : false
-  console.log(Object.entries(data).find(([, value]) => value.description))
 
   return (
     <Box
@@ -26,7 +26,7 @@ export function PropsTable({ data, title }) {
               <tr>
                 <Styled.th>Prop</Styled.th>
                 <Styled.th>Type</Styled.th>
-                <Styled.th>Default</Styled.th>
+                {hasDefault && <Styled.th>Default</Styled.th>}
                 {hasDescription && <Styled.th>Description</Styled.th>}
               </tr>
             </thead>
@@ -42,13 +42,15 @@ export function PropsTable({ data, title }) {
                         <Code variant="fade">{value.type}</Code>
                       </Text>
                     </Styled.td>
-                    <Styled.td>
-                      {value.default && (
-                        <Text textColor="gray700">
-                          <Code variant="outline">{value.default}</Code>
-                        </Text>
-                      )}
-                    </Styled.td>
+                    {hasDefault && (
+                      <Styled.td>
+                        {value.default && (
+                          <Text textColor="gray700">
+                            <Code variant="outline">{value.default}</Code>
+                          </Text>
+                        )}
+                      </Styled.td>
+                    )}
                     {hasDescription && (
                       <Styled.td>
                         <Text textColor="gray700">{value.description}</Text>

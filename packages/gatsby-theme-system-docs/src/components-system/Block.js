@@ -9,8 +9,8 @@ const BlockContext = createContext({
   isOpen: false,
 })
 
-const Block = ({ children, ...props }) => {
-  const [isOpen, setOpen] = useState(false);
+const Block = ({ children, isOpenDefault = false, ...props }) => {
+  const [isOpen, setOpen] = useState(isOpenDefault);
   return(
     <Box 
       sx={{

@@ -17,18 +17,15 @@ export const liveEditorStyle = {
 
 const liveTheme = { styles: [] }
 
-export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
+export const CodeBlock =  ({ children, live, gray, toggle, open }) => {
   const components = useMDXComponents();
   const liveProviderProps = {
-    transformCode: code => (removeFragment ? code : `<>${code}</>`),
     scope: { mdx, ...components, ...liveScope },
   };
 
-
-
   if (live) {
     return (
-      <Block>
+      <Block isOpenDefault={(!toggle || open) ? true : false}>
         <LiveProvider 
           code={children.trim()}
           theme={liveTheme} 
@@ -43,7 +40,7 @@ export const CodeBlock =  ({ children, live, removeFragment, gray }) => {
               <LivePreview />
             </Wrapper>
           </BlockHeader>
-          <BlockToggleButton />
+          {toggle &&  <BlockToggleButton />}
           <BlockPanel>
             <LiveEditor
               sx={{
