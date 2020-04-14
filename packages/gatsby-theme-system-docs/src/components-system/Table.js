@@ -5,7 +5,6 @@ import Code from './Code'
 export function PropsTable({ data, title = "Props" }) {
   const hasProps = Object.keys(data).length > 0;
   const hasDescription = Object.entries(data).find(([, value]) => value.description) ? true : false
-  console.log(Object.entries(data).find(([, value]) => value.description))
 
   return (
     <Box

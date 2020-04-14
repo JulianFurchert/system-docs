@@ -12,7 +12,6 @@ function DocPageTemplate({
   ...props 
 }) {
 
-  console.log(data)
   const children = <MDXRenderer children={data.mdxDocPage.body} />;
   return (
     <Layout title={title} excerpt={description} {...props}>
